@@ -21,6 +21,5 @@ func SetupApiRoutes(app *fiber.App, store *session.Store) {
 	// *Global
 	globalGroup := app.Group("/api")
 	globalGroup.Get("/get-config-jeabguard", controllers.GetConfigGlobal)
-	globalGroup.Get("/get-config-jeabguard2", controllers.GetConfigGlobal)
 
 }
