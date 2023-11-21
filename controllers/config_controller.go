@@ -4,13 +4,14 @@ import (
 	"encoding/json"
 	"log"
 
+	"github.com/PatipatCha/jeab_global_service/configuration"
 	"github.com/PatipatCha/jeab_global_service/model"
 	"github.com/gofiber/fiber/v2"
 	"github.com/tidwall/gjson"
 )
 
-func GetConfigGlobal(c *fiber.Ctx) (err error) {
-	var baseUrl = "https://jeab-project.azurewebsites.net/api/get-project?code=h8lIZJ3SmmTidunpnFLntDrq29ZAK0-QhXKMLX1exD14AzFujfVguA=="
+func GetConfigGlobalHandler(c *fiber.Ctx) (err error) {
+	var baseUrl = configuration.ApiProjectConfig()
 	agent := fiber.Get(baseUrl)
 
 	var project_list []model.Project
